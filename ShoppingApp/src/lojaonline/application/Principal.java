@@ -9,11 +9,7 @@ import lojaonline.model.Compra;
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        //System.out.println("Digite o limite do cartão: ");
-        //double limite = sc.nextDouble();
-        //CartaoDeCredito cartao = new CartaoDeCredito(limite);
-
-        CartaoDeCredito cartao = new CartaoDeCredito(10203040, 1202);
+        CartaoDeCredito cartao = new CartaoDeCredito(10203040, 1202, 100);
         
 
         boolean acessoAutorizado = false;

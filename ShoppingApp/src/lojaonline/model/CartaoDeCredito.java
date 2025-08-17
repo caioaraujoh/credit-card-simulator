@@ -28,9 +28,12 @@ public class CartaoDeCredito implements CardValidator {
 
 
 
-    public CartaoDeCredito(int numeroCartao, int senhaCartao) {
+    public CartaoDeCredito(int numeroCartao, int senhaCartao, double limite) {
         this.numeroCartao = numeroCartao;
         this.senhaCartao = senhaCartao;
+        this.limite = limite;
+        this.saldo = limite;
+        this.compras = new ArrayList<>();
     }
 
 
@@ -60,7 +63,7 @@ public class CartaoDeCredito implements CardValidator {
 
 
     public boolean lancaCompra(Compra compra) {
-        if(this.saldo >= compra.getValor()){
+        if(this.saldo > compra.getValor()){
             this.saldo -= compra.getValor();
             this.compras.add(compra);
             return true;
